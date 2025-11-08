@@ -1,0 +1,249 @@
+................................................................FFFFFFF.............FFF.FFF........F...........................F...FFF....F....FFFFFFF..F...........FF....F............................
+
+Failures:
+
+  1) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 titleフォームが表示される
+     Failure/Error: expect(page).to have_field 'book[title]'
+       expected to find field "book[title]" that is not disabled but there were no matches
+     # ./spec/system/02_after_login_spec.rb:76:in `block (4 levels) in <main>'
+
+  2) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 titleフォームに値が入っていない
+     Failure/Error: expect(find_field('book[title]').text).to be_blank
+
+     Capybara::ElementNotFound:
+       Unable to find field "book[title]" that is not disabled
+     # ./spec/system/02_after_login_spec.rb:79:in `block (4 levels) in <main>'
+
+  3) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 bodyフォームが表示される
+     Failure/Error: expect(page).to have_field 'book[body]'
+       expected to find field "book[body]" that is not disabled but there were no matches
+     # ./spec/system/02_after_login_spec.rb:82:in `block (4 levels) in <main>'
+
+  4) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 bodyフォームに値が入っていない
+     Failure/Error: expect(find_field('book[body]').text).to be_blank
+
+     Capybara::ElementNotFound:
+       Unable to find field "book[body]" that is not disabled
+     # ./spec/system/02_after_login_spec.rb:85:in `block (4 levels) in <main>'
+
+  5) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 Create Bookボタンが表示される
+     Failure/Error: expect(page).to have_button 'Create Book'
+       expected to find button "Create Book" that is not disabled but there were no matches
+     # ./spec/system/02_after_login_spec.rb:88:in `block (4 levels) in <main>'
+
+  6) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される
+     Failure/Error: fill_in 'book[title]', with: Faker::Lorem.characters(number: 5)
+
+     Capybara::ElementNotFound:
+       Unable to find field "book[title]" that is not disabled
+     # ./spec/system/02_after_login_spec.rb:94:in `block (4 levels) in <main>'
+
+  7) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 投稿成功のテスト リダイレクト先が、保存できた投稿の詳細画面になっている
+     Failure/Error: fill_in 'book[title]', with: Faker::Lorem.characters(number: 5)
+
+     Capybara::ElementNotFound:
+       Unable to find field "book[title]" that is not disabled
+     # ./spec/system/02_after_login_spec.rb:94:in `block (4 levels) in <main>'
+
+  8) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 bodyフォームに値が入っていない
+     Failure/Error: expect(find_field('book[body]').text).to be_blank
+       expected `"cmvxi1kts8jh58z750f0".blank?` to be truthy, got false
+     # ./spec/system/02_after_login_spec.rb:158:in `block (4 levels) in <main>'
+
+  9) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 Create Bookボタンが表示される
+     Failure/Error: expect(page).to have_button 'Create Book'
+       expected to find button "Create Book" that is not disabled but there were no matches
+     # ./spec/system/02_after_login_spec.rb:161:in `block (4 levels) in <main>'
+
+  10) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される
+      Failure/Error: expect { click_button 'Create Book' }.to change(user.books, :count).by(1)
+
+      Capybara::ElementNotFound:
+        Unable to find button "Create Book" that is not disabled
+      # ./spec/system/02_after_login_spec.rb:172:in `block (5 levels) in <main>'
+      # ./spec/system/02_after_login_spec.rb:172:in `block (4 levels) in <main>'
+
+  11) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト application.html.erbにjavascript_pack_tagを含んでいる
+      Failure/Error: click_link 'Destroy'
+
+      AbstractController::ActionNotFound:
+        The action 'destroy' could not be found for BooksController
+        Did you mean?  delete
+                       edit
+                       index
+                       create
+      # ./spec/system/02_after_login_spec.rb:196:in `block (4 levels) in <main>'
+
+  12) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト 正しく削除される
+      Failure/Error: click_link 'Destroy'
+
+      AbstractController::ActionNotFound:
+        The action 'destroy' could not be found for BooksController
+        Did you mean?  delete
+                       edit
+                       index
+                       create
+      # ./spec/system/02_after_login_spec.rb:196:in `block (4 levels) in <main>'
+
+  13) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト リダイレクト先が、投稿一覧画面になっている
+      Failure/Error: click_link 'Destroy'
+
+      AbstractController::ActionNotFound:
+        The action 'destroy' could not be found for BooksController
+        Did you mean?  delete
+                       edit
+                       index
+                       create
+      # ./spec/system/02_after_login_spec.rb:196:in `block (4 levels) in <main>'
+
+  14) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 編集成功のテスト bodyが正しく更新される
+      Failure/Error: expect(book.reload.body).not_to eq @book_old_body
+
+        expected: value != "q78nhgsdumcrrf1fl5k6"
+             got: "q78nhgsdumcrrf1fl5k6"
+
+        (compared using ==)
+      # ./spec/system/02_after_login_spec.rb:249:in `block (4 levels) in <main>'
+
+  15) [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 表示の確認 名前編集フォームに自分の名前が表示される
+      Failure/Error: expect(page).to have_field 'user[name]', with: user.name
+        expected to find field "user[name]" that is not disabled but there were no matches
+      # ./spec/system/02_after_login_spec.rb:373:in `block (4 levels) in <main>'
+
+  16) [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 更新成功のテスト nameが正しく更新される
+      Failure/Error: fill_in 'user[name]', with: Faker::Lorem.characters(number: 9)
+
+      Capybara::ElementNotFound:
+        Unable to find field "user[name]" that is not disabled
+      # ./spec/system/02_after_login_spec.rb:390:in `block (4 levels) in <main>'
+
+  17) [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 更新成功のテスト introductionが正しく更新される
+      Failure/Error: fill_in 'user[name]', with: Faker::Lorem.characters(number: 9)
+
+      Capybara::ElementNotFound:
+        Unable to find field "user[name]" that is not disabled
+      # ./spec/system/02_after_login_spec.rb:390:in `block (4 levels) in <main>'
+
+  18) [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 更新成功のテスト リダイレクト先が、自分のユーザ詳細画面になっている
+      Failure/Error: fill_in 'user[name]', with: Faker::Lorem.characters(number: 9)
+
+      Capybara::ElementNotFound:
+        Unable to find field "user[name]" that is not disabled
+      # ./spec/system/02_after_login_spec.rb:390:in `block (4 levels) in <main>'
+
+  19) [STEP3] 仕上げのテスト サクセスメッセージのテスト 投稿データの新規投稿成功時: 投稿一覧画面から行います。
+      Failure/Error: fill_in 'book[title]', with: Faker::Lorem.characters(number: 5)
+
+      Capybara::ElementNotFound:
+        Unable to find field "book[title]" that is not disabled
+      # ./spec/system/03_finishing_touches_spec.rb:53:in `block (3 levels) in <main>'
+
+  20) [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする 更新されない
+      Failure/Error: fill_in 'user[name]', with: @name
+
+      Capybara::ElementNotFound:
+        Unable to find field "user[name]" that is not disabled
+      # ./spec/system/03_finishing_touches_spec.rb:105:in `block (4 levels) in <main>'
+
+  21) [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする ユーザ編集画面を表示しており、フォームの内容が正しい
+      Failure/Error: fill_in 'user[name]', with: @name
+
+      Capybara::ElementNotFound:
+        Unable to find field "user[name]" that is not disabled
+      # ./spec/system/03_finishing_touches_spec.rb:105:in `block (4 levels) in <main>'
+
+  22) [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする バリデーションエラーが表示される
+      Failure/Error: fill_in 'user[name]', with: @name
+
+      Capybara::ElementNotFound:
+        Unable to find field "user[name]" that is not disabled
+      # ./spec/system/03_finishing_touches_spec.rb:105:in `block (4 levels) in <main>'
+
+  23) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 投稿が保存されない
+      Failure/Error: fill_in 'book[body]', with: @body
+
+      Capybara::ElementNotFound:
+        Unable to find field "book[body]" that is not disabled
+      # ./spec/system/03_finishing_touches_spec.rb:128:in `block (4 levels) in <main>'
+
+  24) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 投稿一覧画面を表示している
+      Failure/Error: fill_in 'book[body]', with: @body
+
+      Capybara::ElementNotFound:
+        Unable to find field "book[body]" that is not disabled
+      # ./spec/system/03_finishing_touches_spec.rb:128:in `block (4 levels) in <main>'
+
+  25) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 新規投稿フォームの内容が正しい
+      Failure/Error: fill_in 'book[body]', with: @body
+
+      Capybara::ElementNotFound:
+        Unable to find field "book[body]" that is not disabled
+      # ./spec/system/03_finishing_touches_spec.rb:128:in `block (4 levels) in <main>'
+
+  26) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする バリデーションエラーが表示される
+      Failure/Error: fill_in 'book[body]', with: @body
+
+      Capybara::ElementNotFound:
+        Unable to find field "book[body]" that is not disabled
+      # ./spec/system/03_finishing_touches_spec.rb:128:in `block (4 levels) in <main>'
+
+  27) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする エラーメッセージが表示される
+      Failure/Error: expect(page).to have_content 'error'
+        expected to find text "error" in "Bookers\nHome Users Books Log out\nEditing Book\nTitle\nOpinion jnh79srscgdgwh46q0p9\nShow | Back\nCopyRight Infratop.inc"
+      # ./spec/system/03_finishing_touches_spec.rb:171:in `block (4 levels) in <main>'
+
+  28) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の編集リンクが表示されない
+      Failure/Error: expect(page).not_to have_link 'Edit'
+        expected not to find visible link "Edit", found 1 match: "Edit"
+      # ./spec/system/03_finishing_touches_spec.rb:235:in `block (5 levels) in <main>'
+
+  29) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の削除リンクが表示されない
+      Failure/Error: expect(page).not_to have_link 'Destroy'
+        expected not to find visible link "Destroy", found 1 match: "Destroy"
+      # ./spec/system/03_finishing_touches_spec.rb:238:in `block (5 levels) in <main>'
+
+  30) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる
+      Failure/Error: expect(current_path).to eq '/books'
+
+        expected: "/books"
+             got: "/books/2/edit"
+
+        (compared using ==)
+      # ./spec/system/03_finishing_touches_spec.rb:263:in `block (4 levels) in <main>'
+
+Finished in 22.16 seconds (files took 1.49 seconds to load)
+199 examples, 30 failures
+
+Failed examples:
+
+rspec ./spec/system/02_after_login_spec.rb:75 # [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 titleフォームが表示される
+rspec ./spec/system/02_after_login_spec.rb:78 # [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 titleフォームに値が入っていない
+rspec ./spec/system/02_after_login_spec.rb:81 # [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 bodyフォームが表示される
+rspec ./spec/system/02_after_login_spec.rb:84 # [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 bodyフォームに値が入っていない
+rspec ./spec/system/02_after_login_spec.rb:87 # [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 Create Bookボタンが表示される
+rspec ./spec/system/02_after_login_spec.rb:98 # [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される
+rspec ./spec/system/02_after_login_spec.rb:101 # [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 投稿成功のテスト リダイレクト先が、保存できた投稿の詳細画面になっている
+rspec ./spec/system/02_after_login_spec.rb:157 # [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 bodyフォームに値が入っていない
+rspec ./spec/system/02_after_login_spec.rb:160 # [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 Create Bookボタンが表示される
+rspec ./spec/system/02_after_login_spec.rb:171 # [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される
+rspec ./spec/system/02_after_login_spec.rb:184 # [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト application.html.erbにjavascript_pack_tagを含んでいる
+rspec ./spec/system/02_after_login_spec.rb:198 # [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト 正しく削除される
+rspec ./spec/system/02_after_login_spec.rb:201 # [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト リダイレクト先が、投稿一覧画面になっている
+rspec ./spec/system/02_after_login_spec.rb:248 # [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 編集成功のテスト bodyが正しく更新される
+rspec ./spec/system/02_after_login_spec.rb:372 # [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 表示の確認 名前編集フォームに自分の名前が表示される
+rspec ./spec/system/02_after_login_spec.rb:397 # [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 更新成功のテスト nameが正しく更新される
+rspec ./spec/system/02_after_login_spec.rb:400 # [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 更新成功のテスト introductionが正しく更新される
+rspec ./spec/system/02_after_login_spec.rb:403 # [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 更新成功のテスト リダイレクト先が、自分のユーザ詳細画面になっている
+rspec ./spec/system/03_finishing_touches_spec.rb:47 # [STEP3] 仕上げのテスト サクセスメッセージのテスト 投稿データの新規投稿成功時: 投稿一覧画面から行います。
+rspec ./spec/system/03_finishing_touches_spec.rb:109 # [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする 更新されない
+rspec ./spec/system/03_finishing_touches_spec.rb:112 # [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする ユーザ編集画面を表示しており、フォームの内容が正しい
+rspec ./spec/system/03_finishing_touches_spec.rb:115 # [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする バリデーションエラーが表示される
+rspec ./spec/system/03_finishing_touches_spec.rb:131 # [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 投稿が保存されない
+rspec ./spec/system/03_finishing_touches_spec.rb:134 # [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 投稿一覧画面を表示している
+rspec ./spec/system/03_finishing_touches_spec.rb:140 # [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 新規投稿フォームの内容が正しい
+rspec ./spec/system/03_finishing_touches_spec.rb:144 # [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする バリデーションエラーが表示される
+rspec ./spec/system/03_finishing_touches_spec.rb:170 # [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする エラーメッセージが表示される
+rspec ./spec/system/03_finishing_touches_spec.rb:234 # [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の編集リンクが表示されない
+rspec ./spec/system/03_finishing_touches_spec.rb:237 # [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の削除リンクが表示されない
+rspec ./spec/system/03_finishing_touches_spec.rb:261 # [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる
+
