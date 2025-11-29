@@ -51,4 +51,20 @@ class User < ApplicationRecord
   def will_save_change_to_email?
     false
   end
+
+  # 検索メソッド
+  def self.search_for(word, method)
+    case method
+    when 'perfect_match'
+      User.where(name: word)
+    when 'forward_match'
+      User.where('name LIKE ?', "#{word}%")
+    when 'backward_match'
+      User.where('name LIKE ?', "%#{word}")
+    when 'partial_match'
+      User.where('name LIKE ?', "%#{word}%")
+    else
+      User.all
+    end
+  end
 end

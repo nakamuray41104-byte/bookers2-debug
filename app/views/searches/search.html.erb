@@ -1,0 +1,71 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <h2>検索結果</h2>
+      <p>検索ワード: <strong><%= @word %></strong></p>
+      
+      <% if @range == "User" %>
+        <h3 class="mt-4">Users</h3>
+        <% if @records.any? %>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>画像</th>
+                <th>名前</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @records.each do |user| %>
+                <tr>
+                  <td>
+                    <%= link_to user_path(user) do %>
+                      <%= image_tag user.get_profile_image, size: "50x50" %>
+                    <% end %>
+                  </td>
+                  <td><%= user.name %></td>
+                  <td><%= link_to "Show", user_path(user), class: "btn btn-sm btn-primary" %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <p class="text-muted">該当するユーザーが見つかりませんでした。</p>
+        <% end %>
+        
+      <% else %>
+        <h3 class="mt-4">Books</h3>
+        <% if @records.any? %>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>タイトル</th>
+                <th>本文</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @records.each do |book| %>
+                <tr>
+                  <td>
+                    <%= link_to user_path(book.user) do %>
+                      <%= image_tag book.user.get_profile_image, size: "50x50" %>
+                    <% end %>
+                  </td>
+                  <td>
+                    <%= link_to book_path(book) do %>
+                      <%= book.title %>
+                    <% end %>
+                  </td>
+                  <td><%= book.body %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <p class="text-muted">該当する投稿が見つかりませんでした。</p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
